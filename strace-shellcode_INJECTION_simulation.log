@@ -1,0 +1,122 @@
+execve("./shellcode_INJECTION_simulation", ["./shellcode_INJECTION_simulation"], 0x7ffc1b411100 /* 34 vars */) = 0
+brk(NULL)                               = 0x559ff30b2000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffd15312100) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f43d3dd5000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=78683, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 78683, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f43d3dc1000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f43d3a00000
+mmap(0x7f43d3a28000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f43d3a28000
+mmap(0x7f43d3bbd000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7f43d3bbd000
+mmap(0x7f43d3c15000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7f43d3c15000
+mmap(0x7f43d3c1b000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f43d3c1b000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f43d3dbe000
+arch_prctl(ARCH_SET_FS, 0x7f43d3dbe740) = 0
+set_tid_address(0x7f43d3dbea10)         = 13570
+set_robust_list(0x7f43d3dbea20, 24)     = 0
+rseq(0x7f43d3dbf0e0, 0x20, 0, 0x53053053) = 0
+mprotect(0x7f43d3c15000, 16384, PROT_READ) = 0
+mprotect(0x559ff11fc000, 4096, PROT_READ) = 0
+mprotect(0x7f43d3e0f000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7f43d3dc1000, 78683)           = 0
+newfstatat(1, "", {st_mode=S_IFCHR|0600, st_rdev=makedev(0x88, 0x8), ...}, AT_EMPTY_PATH) = 0
+getrandom("\x99\x80\x65\x3d\xb9\x08\xdf\x57", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x559ff30b2000
+brk(0x559ff30d3000)                     = 0x559ff30d3000
+write(1, "Executing shellcode...\n", 23) = 23
+mmap(NULL, 35, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f43d3e0e000
+mprotect(0x7f43d3e0e000, 35, PROT_READ|PROT_EXEC) = 0
+execve("/bin/sh", NULL, NULL)           = 0
+brk(NULL)                               = 0x56405bb26000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffc31982920) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcdfae18000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=78683, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 78683, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fcdfae04000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fcdfaa00000
+mmap(0x7fcdfaa28000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7fcdfaa28000
+mmap(0x7fcdfabbd000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7fcdfabbd000
+mmap(0x7fcdfac15000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7fcdfac15000
+mmap(0x7fcdfac1b000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fcdfac1b000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fcdfae01000
+arch_prctl(ARCH_SET_FS, 0x7fcdfae01740) = 0
+set_tid_address(0x7fcdfae01a10)         = 13570
+set_robust_list(0x7fcdfae01a20, 24)     = 0
+rseq(0x7fcdfae020e0, 0x20, 0, 0x53053053) = 0
+mprotect(0x7fcdfac15000, 16384, PROT_READ) = 0
+mprotect(0x56405ab22000, 8192, PROT_READ) = 0
+mprotect(0x7fcdfae52000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7fcdfae04000, 78683)           = 0
+getuid()                                = 0
+getgid()                                = 0
+getpid()                                = 13570
+rt_sigaction(SIGCHLD, {sa_handler=0x56405ab18aa0, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7fcdfaa42520}, NULL, 8) = 0
+geteuid()                               = 0
+getppid()                               = 13567
+getrandom("\x2a\x0d\x31\xa4\xb9\xdd\x92\x92", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x56405bb26000
+brk(0x56405bb47000)                     = 0x56405bb47000
+getcwd("/home/ahmed/CIT622-OS_Sec", 4096) = 26
+ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+geteuid()                               = 0
+getegid()                               = 0
+rt_sigaction(SIGINT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGINT, {sa_handler=0x56405ab18aa0, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7fcdfaa42520}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_IGN, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7fcdfaa42520}, NULL, 8) = 0
+rt_sigaction(SIGTERM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGTERM, {sa_handler=SIG_IGN, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7fcdfaa42520}, NULL, 8) = 0
+openat(AT_FDCWD, "/dev/tty", O_RDWR)    = 3
+fcntl(3, F_DUPFD, 10)                   = 10
+close(3)                                = 0
+fcntl(10, F_SETFD, FD_CLOEXEC)          = 0
+ioctl(10, TIOCGPGRP, [13567])           = 0
+getpgrp()                               = 13567
+rt_sigaction(SIGTSTP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGTSTP, {sa_handler=SIG_IGN, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7fcdfaa42520}, NULL, 8) = 0
+rt_sigaction(SIGTTOU, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGTTOU, {sa_handler=SIG_IGN, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7fcdfaa42520}, NULL, 8) = 0
+rt_sigaction(SIGTTIN, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGTTIN, {sa_handler=SIG_DFL, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7fcdfaa42520}, NULL, 8) = 0
+setpgid(0, 13570)                       = 0
+rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], NULL, 8) = 0
+ioctl(10, TIOCSPGRP, [13570])           = 0
+rt_sigprocmask(SIG_SETMASK, [], ~[KILL STOP RTMIN RT_1], 8) = 0
+write(2, "# ", 2)                       = 2
+read(0, 0x56405ab24cc0, 8192)           = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+--- SIGINT {si_signo=SIGINT, si_code=SI_KERNEL} ---
+rt_sigprocmask(SIG_SETMASK, [], ~[KILL STOP RTMIN RT_1], 8) = 0
+write(2, "\n", 1)                       = 1
+write(2, "# ", 2)                       = 2
+read(0, "", 8192)                       = 0
+write(2, "\n", 1)                       = 1
+rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], NULL, 8) = 0
+ioctl(10, TIOCSPGRP, [13567])           = 0
+rt_sigprocmask(SIG_SETMASK, [], ~[KILL STOP RTMIN RT_1], 8) = 0
+setpgid(0, 13567)                       = 0
+close(10)                               = 0
+exit_group(130)                         = ?
++++ exited with 130 +++
